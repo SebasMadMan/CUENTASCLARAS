@@ -1,4 +1,11 @@
-/* Reset básico y tipografía */
+/* ==========================================================================
+   PALETA "EL CLUB DE LA ALCANCÍA"
+   - Azul Marino (Principal): #1B2B42
+   - Verde Teal (Secundario/Badges): #2A8B99
+   - Dorado / Cálido (Acentos/Botones): #E6A119
+   - Fondo: #F4F7F9
+   ========================================================================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,30 +14,39 @@
 }
 
 body {
-  background-color: #f4f6f9;
-  color: #333;
+  background-color: #f4f7f9;
+  color: #2c3e50;
   line-height: 1.6;
   padding-bottom: 40px;
 }
 
-/* Encabezado */
+/* Encabezado con imagen de fondo y capa oscura para legibilidad */
 .app-header {
-  background: linear-gradient(135deg, #0d6efd, #0a58ca);
-  color: #fff;
+  /* Fondo con degradado azul más claro y la imagen ocupando todo el marco (cover) */
+  background: linear-gradient(rgba(27, 43, 66, 0.45), rgba(27, 43, 66, 0.45)), 
+              url('../assets/logo.jpeg') center/cover no-repeat #1b2b42;
+  color: #ffffff;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 4.5rem 1rem; /* Más alto para dar espacio a la imagen */
   margin-bottom: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(27, 43, 66, 0.25);
+  border-bottom: 4px solid #e6a119;
 }
 
+/* Sombra al texto para mantener alta legibilidad sobre la ilustración clara */
 .app-header h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .app-header p {
-  font-size: 1rem;
-  opacity: 0.9;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* Contenedor Principal */
@@ -43,23 +59,24 @@ body {
   gap: 1.5rem;
 }
 
-/* Tarjetas Generales (Secciones) */
+/* Tarjetas Generales */
 .card-section {
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(27, 43, 66, 0.05);
+  border: 1px solid #e8ecef;
 }
 
 .card-section h2 {
   font-size: 1.25rem;
-  color: #0a58ca;
+  color: #1b2b42;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #e9ecef;
+  border-bottom: 2px solid #e2f1f1;
   padding-bottom: 0.5rem;
 }
 
-/* Indicadores Financieros (Grid de KPIs) */
+/* Indicadores Financieros (KPIs) */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -69,22 +86,17 @@ body {
 .kpi-card {
   background: #ffffff;
   padding: 1.25rem;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border-left: 5px solid #0d6efd;
+  box-shadow: 0 4px 12px rgba(27, 43, 66, 0.05);
+  border-left: 5px solid #1b2b42;
 }
 
-.kpi-card:nth-child(2) {
-  border-left-color: #dc3545;
-}
-
-.kpi-card:nth-child(3) {
-  border-left-color: #198754;
-}
+.kpi-card:nth-child(2) { border-left-color: #d9534f; }
+.kpi-card:nth-child(3) { border-left-color: #2a8b99; }
 
 .kpi-card h3 {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #6c757d;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -93,19 +105,17 @@ body {
 .kpi-card p {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #212529;
+  color: #1b2b42;
   margin-top: 0.3rem;
 }
 
-/* Formulario de Presupuesto e Inputs */
+/* Formularios e Inputs */
 .inline-form {
   display: flex;
   gap: 0.75rem;
 }
 
-.inline-form input {
-  flex: 1;
-}
+.inline-form input { flex: 1; }
 
 .gasto-form {
   display: grid;
@@ -122,44 +132,42 @@ body {
 .form-group label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #495057;
+  color: #1b2b42;
 }
 
 input, select {
   padding: 0.65rem 0.85rem;
   border: 1px solid #ced4da;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 input:focus, select:focus {
-  border-color: #0d6efd;
-  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+  border-color: #2a8b99;
+  box-shadow: 0 0 0 3px rgba(42, 139, 153, 0.15);
 }
 
 /* Botones */
 button {
   cursor: pointer;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   padding: 0.65rem 1.25rem;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-button:active {
-  transform: scale(0.98);
-}
+button:active { transform: scale(0.98); }
 
 #btn-presupuesto, .btn-primary {
-  background-color: #0d6efd;
+  background-color: #1b2b42;
   color: #ffffff;
 }
 
 #btn-presupuesto:hover, .btn-primary:hover {
-  background-color: #0b5ed7;
+  background-color: #2a8b99;
 }
 
 .btn-primary {
@@ -168,17 +176,15 @@ button:active {
 }
 
 .btn-delete {
-  background-color: #e35d6a;
+  background-color: #d9534f;
   color: #ffffff;
   padding: 0.35rem 0.75rem;
   font-size: 0.85rem;
 }
 
-.btn-delete:hover {
-  background-color: #bb2d3b;
-}
+.btn-delete:hover { background-color: #c9302c; }
 
-/* Historial y Lista de Gastos */
+/* Historial de Gastos */
 .header-historial {
   display: flex;
   justify-content: space-between;
@@ -225,17 +231,15 @@ button:active {
 }
 
 .badge-cat {
-  background-color: #e7f1ff;
-  color: #0c63e4;
+  background-color: #e2f1f1;
+  color: #2a8b99;
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 12px;
 }
 
-.info-gasto small {
-  color: #6c757d;
-}
+.info-gasto small { color: #6c757d; }
 
 .monto-accion {
   display: flex;
@@ -246,7 +250,7 @@ button:active {
 .monto-text {
   font-weight: 700;
   font-size: 1.05rem;
-  color: #212529;
+  color: #1b2b42;
 }
 
 .empty-msg {
@@ -258,21 +262,16 @@ button:active {
 
 /* Adaptabilidad Mobile */
 @media (max-width: 600px) {
-  .inline-form {
-    flex-direction: column;
-  }
-  
+  .inline-form { flex-direction: column; }
   .header-historial {
     flex-direction: column;
     align-items: flex-start;
   }
-  
   .item-gasto {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
   }
-  
   .monto-accion {
     width: 100%;
     justify-content: space-between;
