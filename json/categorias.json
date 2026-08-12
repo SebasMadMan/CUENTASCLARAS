@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nombre": "Alimentación"
+  },
+  {
+    "id": 2,
+    "nombre": "Servicios y Hogar"
+  },
+  {
+    "id": 3,
+    "nombre": "Transporte"
+  },
+  {
+    "id": 4,
+    "nombre": "Salud y Bienestar"
+  },
+  {
+    "id": 5,
+    "nombre": "Educación"
+  },
+  {
+    "id": 6,
+    "nombre": "Ocio y Entretenimiento"
+  },
+  {
+    "id": 7,
+    "nombre": "Compras Generales"
+  },
+  {
+    "id": 8,
+    "nombre": "Otros Gastos"
+  }
+]

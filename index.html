@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CuentasClaras - Control de Gastos Mensuales</title>
+  
+  <!-- CDN Toastify CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <!-- Hoja de estilos propia -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="app-header">
+    <h1>CuentasClaras</h1>
+    <p>Gestor y Planilla de Gastos Mensuales</p>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Configuración de Presupuesto Inicial -->
+    <section class="card-section">
+      <h2>Presupuesto Mensual</h2>
+      <form id="form-presupuesto" class="inline-form">
+        <input type="number" id="input-presupuesto" placeholder="Ej: 50000" min="1" required>
+        <button type="submit" id="btn-presupuesto">Definir Presupuesto</button>
+      </form>
+    </section>
+
+    <!-- Indicadores Financieros (Tarjetas de Resumen) -->
+    <section class="dashboard-grid">
+      <div class="kpi-card">
+        <h3>Presupuesto</h3>
+        <p>$<span id="display-presupuesto">0</span></p>
+      </div>
+      <div class="kpi-card">
+        <h3>Total Gastado</h3>
+        <p>$<span id="total-gastado">0</span></p>
+      </div>
+      <div class="kpi-card">
+        <h3>Saldo Restante</h3>
+        <p>$<span id="saldo-restante">0</span></p>
+      </div>
+    </section>
+
+    <!-- Formulario para Agregar Nuevo Gasto -->
+    <section class="card-section">
+      <h2>Registrar Nuevo Gasto</h2>
+      <form id="form-gasto" class="gasto-form">
+        <div class="form-group">
+          <label for="input-descripcion">Descripción</label>
+          <input type="text" id="input-descripcion" placeholder="Ej: Supermercado" required>
+        </div>
+
+        <div class="form-group">
+          <label for="input-monto">Monto ($)</label>
+          <input type="number" id="input-monto" placeholder="Ej: 3500" min="1" step="0.01" required>
+        </div>
+
+        <div class="form-group">
+          <label for="select-categoria">Categoría</label>
+          <!-- Se puebla dinámicamente mediante Fetch desde json/categorias.json -->
+          <select id="select-categoria" required>
+            <option value="">Cargando categorías...</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary">Agregar Gasto</button>
+      </form>
+    </section>
+
+    <!-- Historial y Filtrado de Gastos -->
+    <section class="card-section">
+      <div class="header-historial">
+        <h2>Historial de Gastos</h2>
+        <div class="filtro-container">
+          <label for="select-filtro">Filtrar por categoría:</label>
+          <select id="select-filtro">
+            <option value="todas">Todas</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Contenedor dinámico cargado por JavaScript -->
+      <ul id="lista-gastos" class="gastos-list">
+        <!-- Los elementos <li> se crearán aquí con el DOM -->
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- CDN SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- CDN Toastify JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <!-- JavaScript del Proyecto -->
+  <script src="js/app.js"></script>
+</body>
+</html>
